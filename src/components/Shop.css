@@ -1,0 +1,40 @@
+.products-grid {
+  display: grid;
+  grid-template-columns: 1fr;  /* Changed to single column */
+  gap: 30px;
+  padding: 20px;
+  max-width: 800px;  /* Added to control width */
+  margin: 0 auto;    /* Center the container */
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.product-card img {
+  width: 100%;
+  max-width: 600px;  /* Control maximum image width */
+  height: auto;
+  object-fit: cover;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
