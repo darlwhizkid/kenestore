@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { AppProvider } from './context/AppContext';
 import Header from './components/Header';
 import ProductList from './components/ProductList';
 import Subscribe from './components/Subscribe';
@@ -16,17 +18,22 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      {isLoading && <Preloader />}
-      {!isLoading && (
-        <>
-          <Header />
-          <ProductList />
-          <Subscribe />
-          <Footer />
-        </>
-      )}
-    </div>
+    <AppProvider>
+      <BrowserRouter>
+        <div className="App">
+          {isLoading && <Preloader />}
+          {!isLoading && (
+            <>
+              <Header />
+              <ProductList />
+              <Subscribe />
+              <Footer />
+            </>
+          )}
+        </div>
+      </BrowserRouter>
+    </AppProvider>
   );
 }
+
 export default App;
