@@ -1,24 +1,32 @@
 .subscribe-section {
-  padding: 60px 20px;
-  background-color: #f8f8f8;
-  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  background-color: #313030;
+  color: white;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .subscribe-container {
-  max-width: 600px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .subscribe-section h2 {
   font-size: 32px;
   margin-bottom: 16px;
-  color: #333;
+  color: white;
 }
 
 .subscribe-section p {
   font-size: 16px;
   margin-bottom: 24px;
-  color: #666;
+  color: white;
 }
 
 .subscribe-form {

@@ -48,6 +48,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <p>© {new Date().getFullYear()} Kenestore. All rights reserved.</p>
+        <p>|Built by <a href="https://tangitex.ng" target="blank">Tangitex</a></p>
         <button className="scroll-top" onClick={scrollToTop}>
           <FaArrowUp />
         </button>

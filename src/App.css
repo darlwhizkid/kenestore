@@ -49,7 +49,7 @@ body {
 }
 
 .cart-icon {
-  color: var(--text-light);
+  color: (--text-light);
   font-size: 1.5rem;
   position: relative;
 }
@@ -264,5 +264,28 @@ body {
 @media (max-width: 768px) {
   .hamburger {
     display: block;
+  }
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  margin-left: 250px;
+}
+
+.content-wrapper {
+  display: flex;
+  min-height: calc(100vh - 200px);
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 280px;
+  padding: 20px;
+}
+
+@media screen and (max-width: 1023px) {
+  .main-content {
+    margin-left: 0;
   }
 }
