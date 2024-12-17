@@ -174,40 +174,76 @@ body {
 .user-dropdown svg {
   font-size: 16px;
 }
-
-.mobile-nav-toggle {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .sidebar {
-    transform: translateX(-100%);
-  }
-
-  .sidebar.open {
-    transform: translateX(0);
-  }
-
   .mobile-nav-toggle {
-    display: block;
     position: fixed;
     top: 20px;
-    left: 20px;
-    background: none;
+    right: 20px;
+    z-index: 2000;
+    width: 40px;
+    height: 40px;
     border: none;
-    z-index: 1001;
+    background-color: transparent;
+    display: none;
   }
 
-  .mobile-nav-toggle span {
-    display: block;
-    width: 25px;
-    height: 5px;
-    background-color: #0071bc;
-    margin: 5px 0;
-    transition: 0.3s;
+  .hamburger-icon {
+    position: relative;
+    width: 30px;
+    height: 20px;
   }
-}
 
+  .hamburger-icon::before,
+  .hamburger-icon::after,
+  .hamburger-icon span {
+    content: '';
+    position: absolute;
+    height: 2px;
+    background-color: #007bff;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger-icon::before {
+    width: 30px;
+    height: 5px; /* Longest bar */
+    top: 25%;
+  }
+
+  .hamburger-icon span {
+    width: 24px;
+    height: 5px; /* Medium bar */
+    top: 75%;
+    transform: translateY(-50%);
+  }
+
+  .hamburger-icon::after {
+    width: 18px;
+    height: 5px; /* Shortest bar */
+    bottom: 0;
+  }
+
+  /* Show the button only on mobile */
+  @media screen and (max-width: 768px) {
+    .mobile-nav-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .sidebar {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .sidebar.open {
+      transform: translateX(0);
+    }
+  }
+
+  @media (min-width: 769px) {
+    .mobile-nav-toggle {
+      display: none;
+    }
+  }
 .modal-overlay {
   position: fixed;
   top: 0;

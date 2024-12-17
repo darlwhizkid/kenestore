@@ -39,6 +39,15 @@ const Header = () => {
 
   return (
     <div className="kene-header">
+      <button
+        className={`mobile-nav-toggle ${isSidebarOpen ? "open" : ""}`}
+        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+        aria-controls="sidebar"
+        aria-expanded={isSidebarOpen}
+      >
+        <span className="hamburger-icon"></span>
+      </button>
+
       <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
         <div className="sidebar-content">
           <div className="logo-wrapper">
@@ -161,7 +170,9 @@ const Header = () => {
                 />
               </div>
               <div className="btn">
-                <button className="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                <button className="button1">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </button>
                 <button className="button2">Sign Up</button>
               </div>
               <button className="button3">Forgot Password</button>
